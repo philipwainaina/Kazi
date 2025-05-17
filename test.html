@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KaziHub</title>
+    <script>
+        function updateLabel() {
+            const userType = document.querySelector("select[name='user_type']").value;
+            const label = document.getElementById("services-label");
+            if (userType === "client") {
+                label.innerText = "Services Needed:";
+            } else {
+                label.innerText = "Services Offered:";
+            }
+        }
+    </script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    h1 {
+        color: #2c3e50;
+        font-size: 2.5em;
+        margin-top: 40px;
+    }
+
+    h2 {
+        color: #34495e;
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .home {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 40px auto;
+        max-width: 800px;
+    }
+
+    .client, .service {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        padding: 30px;
+        width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .client h3, .service h3 {
+        font-size: 1.3em;
+        color: #2980b9;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #1f6391;
+    }
+</style>
+
+<body>
+    <!-- First Page: Landing with Sign In / Sign Up -->
+    <h1>KaziHub is where meet quality</h1>
+    <h2>Do you have an account,if not Register Today</h2>
+        <div class="home"><div class="client">
+             <h3>Clients</h3>
+            <button onclick="location.href='testsignin.html'">Sign Up</button>
+            <button onclick="location.href='testsignup.html'">Sign In</button>
+        </div>
+        <div class="service">
+            <h3>Service Providers</h3>
+            <button onclick="location.href='testsignin.html'">Sign Up</button>
+            <button onclick="location.href='testsignup.html'">Sign In</button>
+        </div>
+        </div>
+
+        
+
+    
+</body>
+</html>

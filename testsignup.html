@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Styling for the Registration Form */
+#registration {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+#registration h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#registration form {
+    display: flex;
+    flex-direction: column;
+}
+
+#registration label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#registration select,
+#registration input[type="text"],
+#registration input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#registration select:focus,
+#registration input[type="text"]:focus,
+#registration input[type="email"]:focus {
+    border-color: #3274d6;
+    outline: none;
+    box-shadow: 0 0 5px rgba(50, 116, 214, 0.3);
+}
+
+#registration input[type="submit"] {
+    padding: 10px;
+    background-color: #3274d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#registration input[type="submit"]:hover {
+    background-color: #265ab5;
+}
+
+/* Specific styling for the services field */
+#registration input[name="services"] {
+    font-style: italic;
+    color: #666;
+}
+
+#registration input[name="services"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Remove <br> tags for cleaner spacing */
+#registration br {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    #registration {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    #registration h2 {
+        font-size: 20px;
+    }
+
+    #registration label,
+    #registration select,
+    #registration input {
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+    <!-- Second Page: Registration Form -->
+    <div id="registration">
+        <h2>KaziHub Registration</h2>
+        <form method="POST" action="/register">
+            <label for="user_type">Register as:</label>
+            <select name="user_type" onchange="updateLabel()" required>
+                <option value="client">Client</option>
+                <option value="service_provider">Service Provider</option>
+            </select><br><br>
+
+            <label>Name:</label>
+            <input type="text" name="name" required><br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Phone:</label>
+            <input type="text" name="phone" required><br><br>
+
+            <label id="services-label">Services Needed:</label>
+            <input type="text" name="services" placeholder="e.g., laundry, babysitting, plumbing" required><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

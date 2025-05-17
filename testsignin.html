@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Styling for the Sign In Form */
+#signin {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+#signin h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#signin form {
+    display: flex;
+    flex-direction: column;
+}
+
+#signin label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#signin select,
+#signin input[type="email"],
+#signin input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#signin select:focus,
+#signin input[type="email"]:focus,
+#signin input[type="text"]:focus {
+    border-color: #3274d6;
+    outline: none;
+    box-shadow: 0 0 5px rgba(50, 116, 214, 0.3);
+}
+
+#signin input[type="submit"] {
+    padding: 10px;
+    background-color: #3274d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#signin input[type="submit"]:hover {
+    background-color: #265ab5;
+}
+
+/* Ensure consistent spacing */
+#signin br {
+    display: none; /* Remove <br> tags for cleaner spacing; use CSS margins instead */
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    #signin {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    #signin h2 {
+        font-size: 20px;
+    }
+
+    #signin label,
+    #signin select,
+    #signin input {
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+    <!-- Third Page: Sign In Form -->
+    <div id="signin">
+        <h2>KaziHub Sign In</h2>
+        <form method="POST" action="/signin">
+            <label for="user_type">Sign in as:</label>
+            <select name="user_type" required>
+                <option value="client">Client</option>
+                <option value="service_provider">Service Provider</option>
+            </select><br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Phone:</label>
+            <input type="text" name="phone" required><br><br>
+
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
+</body>
+</html>
